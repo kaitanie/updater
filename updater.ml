@@ -13,7 +13,7 @@ module AptV2 = struct
   let apt_command_line apt_command =
     match apt_command with
     | Update -> [ "update" ]
-    | DistUpgrade -> [ "dist-upgrade" ]
+    | DistUpgrade -> [ "-y" ; "dist-upgrade" ]
 
   let command apt_command =
     let default_args = ["DEBIAN_FRONTEND=noninteractive" ; "apt-get"] in
